@@ -7,9 +7,9 @@ const server = http.createServer(chat);
 const io = require('socket.io')(server)
 
 io.on('connection', (socket) => {
-    socket.on('join', (data) => {
-        console.log(data);
-        io.emit('join', 'ssssssss');
+    socket.on('join', (alias) => {
+        console.log(`${alias} entered the chat!`);
+        io.emit('join', `${alias} has entered Obito's chat`);
     })
 });
 

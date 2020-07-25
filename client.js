@@ -2,8 +2,9 @@ const io = require('socket.io-client');
 
 const joinSession = () =>{
     const socket = io.connect(`https://obitoschat.herokuapp.com/`);
-    socket.emit('join', 'dfdsfsd');
+    const alias = document.getElementById('alias').value
+    socket.emit('join', alias);
     socket.on('join', (data) => {
-        console.log(data);
+        
     });
 }
