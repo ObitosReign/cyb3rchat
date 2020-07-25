@@ -12,9 +12,11 @@ io.on('connection', (socket) => {
         io.emit('join', `${alias} has entered Obito's Hackers chat`);
         socket.emit(`join`, `Welcome ${alias} ;)`);
     })
+    alert("dddd");
 });
 
 io.on('new-message', (message) => {
+    alert("dddd");
     socket.broadcast.emit('new-message', message);
 });
 

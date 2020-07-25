@@ -29,11 +29,10 @@ function joinSession() {
 
 function messaging() {
     const socket = io.connect(`https://obitoschat.herokuapp.com/`);
-    socket.emit('new-message', message.value);
-    alert(message.value);
+    const data = message.value;
+    socket.emit('new-message', data);
 }
 
 socket.on('new-message', (message) => {
-    alert(message);
     screen.innerHTML += output + '<br>;'
 });
