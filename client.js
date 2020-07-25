@@ -29,5 +29,5 @@ function joinSession() {
 
 
 socket.on('send', (data) => {
-    console.log(""dddd");
-})');
+    console.log("dddd");
+});
