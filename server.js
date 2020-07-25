@@ -12,9 +12,8 @@ io.on('connection', (socket) => {
         io.emit('join', `${alias} has entered Obito's Hackers chat`);
         socket.emit(`join`, `Welcome ${alias} ;)`);
     });
-    alert('ddd');
-    io.on('send', (data) => {
-        io.emit('send', data);
+    socket.on('send', (message) => {
+        io.emit('send', message);
     });    
 });
 
