@@ -14,9 +14,8 @@ io.on('connection', (socket) => {
     })
 });
 
-io.on('send', (message) => {
-    alert("ddd");
-    socket.broadcast.emit('send', message);
+io.on('new-message', (message) => {
+    socket.broadcast.emit('new-message', message);
 });
 
 chat.use(express.static(__dirname + '/'));
