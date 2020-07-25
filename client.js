@@ -6,7 +6,7 @@ const label = document.getElementById("label");
 const login = document.getElementById("login");
 const chat = document.getElementById("chat");
 const screen = document.getElementById("screen");
-const input = document.getElementById("input");
+const message = document.getElementById("message");
 
 chatContainer.style.height = window.innerHeight + 'px';
 
@@ -28,7 +28,7 @@ function joinSession() {
 }
 
 function messaging() {
-    socket.emit('send', input.value);
+    socket.emit('send', message.value);
     socket.on('send', (ouput) => {
         screen.innerHTML += output + '<br>;'
     });
