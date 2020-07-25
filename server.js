@@ -9,6 +9,7 @@ const io = require('socket.io')(server)
 io.on('connection', (socket) => {
     socket.on('join', (data) => {
         console.log(data);
+        io.emit('join', 'ssssssss');
     })
 });
 
