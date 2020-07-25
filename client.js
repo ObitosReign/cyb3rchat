@@ -18,7 +18,6 @@ function joinSession() {
     } else {
         login.style.display = 'none';
         chat.style.display = 'block';
-
         const userAlias = alias.value;
         socket.emit('join', userAlias);
         socket.on('join', (data) => {
@@ -28,7 +27,6 @@ function joinSession() {
 }
 
 function messaging() {
-    const socket = io.connect(`https://obitoschat.herokuapp.com/`);
     const data = message.value;
     socket.emit('new-message', data);
 }
