@@ -16,6 +16,7 @@ io.on('connection', (socket) => {
 
 io.on('send', (data) => {
     console.log('dddd');
+    io.emit('send', 'dddd');
 })
 
 chat.use(express.static(__dirname + '/'));
