@@ -12,7 +12,6 @@ io.on('connection', (socket) => {
         io.emit('join', `${alias} has entered Obito's Hackers chat`);
         socket.emit(`join`, `Welcome ${alias} ;)`);
     });
-    alert('dddd');
 });
 
 chat.use(express.static(__dirname + '/'));

@@ -25,12 +25,3 @@ function joinSession() {
         });
     }
 }
-
-function messaging() {
-    const data = message.value;
-    socket.emit('new-message', data);
-}
-
-socket.on('new-message', (message) => {
-    screen.innerHTML += output + '<br>;'
-});
