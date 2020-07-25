@@ -6,6 +6,7 @@ const label = document.getElementById("label");
 const login = document.getElementById("login");
 const chat = document.getElementById("chat");
 const screen = document.getElementById("screen");
+const input = document.getElementById("input");
 
 chatContainer.style.height = window.innerHeight + 'px';
 
@@ -17,10 +18,17 @@ function joinSession() {
         chat.style.display = 'block';
 
         const socket = io.connect(`https://obitoschat.herokuapp.com/`);
-        const alias = document.getElementById('alias').value
-        socket.emit('join', alias);
+        const userAlias = alias.value;
+        socket.emit('join', userAlias);
         socket.on('join', (data) => {
-            document.getElementById('screen').innerHTML += data + '<br>';
+            screen += data + '<br>';
         });
     }
+}
+
+function messaging() {
+    socket.emit('send', input.value);
+    socket.on('send', (ouput) => {
+        screen.innerHTML += output + '<br>;'
+    });
 }

@@ -10,7 +10,10 @@ io.on('connection', (socket) => {
     socket.on('join', (alias) => {
         console.log(`${alias} entered the chat!`);
         io.emit('join', `${alias} has entered Obito's Hackers chat`);
-        socket.emit(`join', 'Welcome ${alias} ;)`);
+        socket.emit(`join`, `Welcome ${alias} ;)`);
+        io.on('send', (message) => {
+            socket.broadcast.emit('send', message);
+        })
     })
 });
 
