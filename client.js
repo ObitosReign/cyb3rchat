@@ -28,7 +28,7 @@ function joinSession() {
 }
 
 function messaging() {
-    alert('dddd');
+    alert(message.value);
     socket.emit('send', message.value);
     socket.on('send', (output) => {
         screen.innerHTML += output + '<br>;'
