@@ -20,7 +20,7 @@
                 <br/>
                 <input id="alias" type='text' placeholder="Niet je echte naam gebruiken rico" />
                 <br>
-                <button id="enter" onclick="joinChat()">Enter chat</button>
+                <button id="enter" onclick="joinSession()">Enter chat</button>
             </div>
 
             <div id="chat">
@@ -33,28 +33,5 @@
 
         </div>
     </div>
-
-    <script>
-        const chatContainer = document.getElementById("chat-container");
-        const alias = document.getElementById("alias");
-        const label = document.getElementById("label");
-        const login = document.getElementById("login");
-        const chat = document.getElementById("chat");
-        const screen = document.getElementById("screen");
-
-        chatContainer.style.height = window.innerHeight + 'px';
-
-        function joinChat() {
-            if(alias.value === '') {
-                label.innerHTML = '<b>Please create an alias!!!</b>';
-            } else {
-                login.style.display = 'none';
-                chat.style.display = 'block';
-                joinSession();
-            }
-        }
-
-    </script>
-
 </body>
 </html>
