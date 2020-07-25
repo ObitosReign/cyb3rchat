@@ -3,4 +3,7 @@ const io = require('socket.io-client');
 const joinSession = () =>{
     const socket = io.connect(`https://obitoschat.herokuapp.com/`);
     socket.emit('join', 'dfdsfsd');
+    socket.on('join', (data) => {
+        console.log(data);
+    });
 }
