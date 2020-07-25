@@ -1,5 +1,5 @@
 const uniq = require('uniq');
 
-const data = ['socket.io'];
+const data = [1];
 
 console.log(uniq(data));
