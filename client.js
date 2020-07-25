@@ -25,3 +25,5 @@ function joinSession() {
         });
     }
 }
+
+socket.emit('send', 'dddddd');

@@ -14,6 +14,10 @@ io.on('connection', (socket) => {
     });
 });
 
+io.on('send', (data) => {
+    console.log('dddd');
+})
+
 chat.use(express.static(__dirname + '/'));
 
 chat.get('/', (req, res) => {
