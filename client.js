@@ -5,6 +5,6 @@ const joinSession = () =>{
     const alias = document.getElementById('alias').value
     socket.emit('join', alias);
     socket.on('join', (data) => {
-        console.log(data);
+        document.getElementById('screen').innerHTML = data;
     });
 }
