@@ -1,5 +1,5 @@
 const uniq = require('uniq');
-const socket = require('socket.io');
+const io = require('socket.io');
 
 const data = [1];
 

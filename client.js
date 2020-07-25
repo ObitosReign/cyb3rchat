@@ -1,4 +1,5 @@
 const joinSession = () =>{
-    const socket = io.connect(`https://obitoschat.herokuapp.com/`);
+
+    const socket = io.connect(`http://localhost:${port}`);
     socket.emit('join', 'dfdsfsd');
 }
