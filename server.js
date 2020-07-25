@@ -11,11 +11,12 @@ io.on('connection', (socket) => {
         console.log(`${alias} entered the chat!`);
         io.emit('join', `${alias} has entered Obito's Hackers chat`);
         socket.emit(`join`, `Welcome ${alias} ;)`);
-    });
-    socket.on('send', (message) => {
-        io.emit('send', message);
-    });    
+    });   
 });
+
+socket.on('send', (message) => {
+    io.emit('send', message);
+}); 
 
 chat.use(express.static(__dirname + '/'));
 
