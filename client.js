@@ -29,7 +29,7 @@ function joinSession() {
 
 function messaging() {
     socket.emit('send', message.value);
-    socket.on('send', (ouput) => {
+    socket.on('send', (output) => {
         screen.innerHTML += output + '<br>;'
     });
 }
