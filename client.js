@@ -30,7 +30,8 @@ function messaging() {
     alert('ddd');
     socket.emit('send', message.value);
     message.value = '';
-    socket.on('send', (message) => {
-        screen.innerHTML += message + '<br>';
-    });
 }
+
+socket.on('send', (message) => {
+    screen.innerHTML += message + '<br>';
+});
