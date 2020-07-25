@@ -10,6 +10,8 @@ const input = document.getElementById("input");
 
 chatContainer.style.height = window.innerHeight + 'px';
 
+const socket = io.connect(`https://obitoschat.herokuapp.com/`);
+
 function joinSession() {
     if(alias.value === '') {
         label.innerHTML = '<b>Please create an alias!!!</b>';
@@ -17,7 +19,6 @@ function joinSession() {
         login.style.display = 'none';
         chat.style.display = 'block';
 
-        const socket = io.connect(`https://obitoschat.herokuapp.com/`);
         const userAlias = alias.value;
         socket.emit('join', userAlias);
         socket.on('join', (data) => {
