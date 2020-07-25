@@ -21,7 +21,7 @@ function joinSession() {
         const userAlias = alias.value;
         socket.emit('join', userAlias);
         socket.on('join', (data) => {
-            screen += data + '<br>';
+            screen.innerHTML += data + '<br>';
         });
     }
 }
