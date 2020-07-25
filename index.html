@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/style.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="/client.js"></script>
+</head>
+<body>
+    
+    <div id="chat-container">
+        <div id="chat-wrap">
+
+            <h1 id='title'>Obito's Hackers Chat :)</h1>
+
+            <div id="login">
+                <label id="label" for="alias">Enter an alias for Obito's chat.</label>
+                <br/>
+                <input id="alias" type='text' placeholder="Niet je echte naam gebruiken rico" />
+                <br>
+                <button id="enter" onclick="joinSession">Enter chat</button>
+            </div>
+
+            <div id="chat">
+                <div id="screen"></div>
+                <div id="send-container">
+                    <input id="message" type='text' />
+                    <button id="send">Send</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const chatContainer = document.getElementById("chat-container");
+        const alias = document.getElementById("alias");
+        const label = document.getElementById("label");
+        const login = document.getElementById("login");
+        const chat = document.getElementById("chat");
+        const screen = document.getElementById("screen");
+
+        chatContainer.style.height = window.innerHeight + 'px';
+
+        function joinChat() {
+            if(alias.value === '') {
+                label.innerHTML = '<b>Please create an alias!!!</b>';
+            } else {
+                login.style.display = 'none';
+                chat.style.display = 'block';
+            }
+        }
+
+    </script>
+
+</body>
+</html>
