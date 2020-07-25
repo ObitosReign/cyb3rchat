@@ -24,10 +24,11 @@ function joinSession() {
             screen.innerHTML += data + '<br>';
         });
     }
-    socket.emit('send', 'dddddd');
 }
 
-
-socket.on('send', (data) => {
-    console.log("dddd");
-});
+function messaging() {
+    socket.emit('send', 'dddddd');
+    socket.on('send', (data) => {
+        console.log(data);
+    });
+}

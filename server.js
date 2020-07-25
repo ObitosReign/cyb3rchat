@@ -13,8 +13,7 @@ io.on('connection', (socket) => {
         socket.emit(`join`, `Welcome ${alias} ;)`);
     });
     io.on('send', (data) => {
-        console.log('dddd');
-        io.emit('send', 'dddd');
+        io.emit('send', data);
     });    
 });
 
