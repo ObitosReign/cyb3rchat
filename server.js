@@ -9,8 +9,8 @@ const io = require('socket.io')(server)
 io.on('connection', (socket) => {
     socket.on('join', (alias) => {
         console.log(`${alias} entered the chat!`);
-        io.emit('join', `${alias} has entered Obito's Hackers chat`);
-        socket.emit(`join`, `Welcome ${alias} ;)`);
+        io.emit('join', `${alias} has joined!`);
+        socket.emit(`join`, `Welcome ${alias}`);
         socket.on('send', (message) => {
             io.emit('send', message);
         }); 

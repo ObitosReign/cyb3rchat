@@ -14,24 +14,31 @@ const socket = io.connect(`https://obitoschat.herokuapp.com/`);
 
 function joinSession() {
     if(alias.value === '') {
-        label.innerHTML = '<b>Please create an alias!!!</b>';
+        label.innerHTML = '<b>Create an Alias!</b>';
     } else {
         login.style.display = 'none';
         chat.style.display = 'block';
         const userAlias = alias.value;
-        socket.emit('join', userAlias);
+        socket.emit('join', `<i class="green">${userAlias}</i>`);
         socket.on('join', (data) => {
             screen.innerHTML += data + '<br>';
         });
     }
 }
 
+function checkKey(event) {
+    if(event.keyCode === 13 && event.target.id === 'message') {
+        messaging()
+    } else if(event.keyCode === 13){
+        joinSession();
+    }
+}
+
 function messaging() {
-    alert('ddd');
     socket.emit('send', message.value);
     message.value = '';
 }
 
 socket.on('send', (message) => {
-    screen.innerHTML += message + '<br>';
+    screen.innerHTML += `<i class="purple">${message}</i><br>`;
 });

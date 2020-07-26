@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="/style.css" rel="stylesheet" type="text/css"/>
+    <link href="./style.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -11,22 +12,25 @@
 <body>
     
     <div id="chat-container">
+        <div id="advertisment">
+            Learn Hacking <i class="green">@</i><i class="purple">virtualarity.com</i>
+        </div>
         <div id="chat-wrap">
 
-            <h1 id='title'>Obito's Hackers Chat :)</h1>
+            <h1 id='title'>Virtualarity Chat</h1>
 
             <div id="login">
-                <label id="label" for="alias">Enter an alias for Obito's chat.</label>
+                <label id="label" for="alias">Choose an Alias</label>
                 <br/>
-                <input id="alias" type='text' placeholder="Niet je echte naam gebruiken rico" />
+                <input id="alias" type='text' placeholder="User Alias" onkeydown='checkKey(event)' />
                 <br>
-                <button id="enter" onclick="joinSession()">Enter chat</button>
+                <button id="enter" onclick="joinSession()">Go</button>
             </div>
 
             <div id="chat">
                 <div id="screen"></div>
                 <div id="send-container">
-                    <input id="message" type='text' />
+                    <input id="message" type='text' onkeydown='checkKey(event)'/>
                     <button id="send" onclick='messaging()'>Send</button>
                 </div>
             </div>
