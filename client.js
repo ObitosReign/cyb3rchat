@@ -10,7 +10,7 @@ const message = document.getElementById("message");
 
 chatContainer.style.height = window.innerHeight + 'px';
 
-const socket = io.connect(`https://obitoschat.herokuapp.com/`);
+const socket = io.connect(`http://localhost:4000`);
 
 function joinSession() {
     if(alias.value === '') {
@@ -18,8 +18,7 @@ function joinSession() {
     } else {
         login.style.display = 'none';
         chat.style.display = 'block';
-        const userAlias = alias.value;
-        socket.emit('join', `<i class="green">${userAlias}</i>`);
+        socket.emit('join', alias.value);
         socket.on('join', (data) => {
             screen.innerHTML += data + '<br>';
         });
@@ -35,10 +34,12 @@ function checkKey(event) {
 }
 
 function messaging() {
-    socket.emit('send', message.value);
+    socket.emit('send', message.value+"*@&#%@&#/.,"+alias.value);
     message.value = '';
 }
 
 socket.on('send', (message) => {
-    screen.innerHTML += `<i class="purple">${message}</i><br>`;
+	data = message.split('*@&#%@&#/.,');
+    screen.innerHTML += `${data[0]}<br>`;
+    screen.scrollTop = screen.offsetHeight;
 });
