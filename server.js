@@ -20,8 +20,7 @@ io.on('connection', (socket) => {
         socket.emit(`join`, `Welcome <i style="color:${color}">${alias}</i>`);
         socket.on('send', (message) => {
             data = message.split('*@&#%@&#/.,');
-            for(let i=0; i<users.length; i++){
-                console.log(users[i].color);
+            for(let i=0; i<users.length; i++){  
                 if(users[i].alias === data[1]){
                     color = users[i].color;
                     io.emit('send', `<i style="color:${color}">${data[1]}: ${data[0]}</i>`);
