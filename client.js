@@ -1,4 +1,3 @@
-const port = require('./myModule');
 const io = require('socket.io-client');
 const chatContainer = document.getElementById("chat-container");
 const alias = document.getElementById("alias");
@@ -9,8 +8,6 @@ const screen = document.getElementById("screen");
 const message = document.getElementById("message");
 
 chatContainer.style.height = window.innerHeight + 'px';
-
-console.log('dddd');
 
 const socket = io.connect('https://cyb3rchat.herokuapp.com');
 

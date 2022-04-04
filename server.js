@@ -3,7 +3,6 @@ const chat = express();
 const http = require("http");
 const server = http.createServer(chat);
 const io = require('socket.io')(server);
-const port = require('./myModule');
 
 const users = [];
 let color;
@@ -40,6 +39,8 @@ chat.get('/cv', (req, res) => {
     });
 });
 
-server.listen(port.port, () => {
+const port = process.env.PORT || 80;
+
+server.listen(port, () => {
     console.log(`Listening on http://0.0.0.0:${port}`);
 });
