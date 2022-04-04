@@ -1,5 +1,5 @@
+const port = require('server');
 const io = require('socket.io-client');
-
 const chatContainer = document.getElementById("chat-container");
 const alias = document.getElementById("alias");
 const label = document.getElementById("label");
@@ -9,8 +9,6 @@ const screen = document.getElementById("screen");
 const message = document.getElementById("message");
 
 chatContainer.style.height = window.innerHeight + 'px';
-
-const port = 9002;
 
 const socket = io.connect(`https://cyb3rchat.herokuapp.com:${port}`);
 
