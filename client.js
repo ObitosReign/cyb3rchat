@@ -10,7 +10,9 @@ const message = document.getElementById("message");
 
 chatContainer.style.height = window.innerHeight + 'px';
 
-const socket = io.connect(`http://localhost:1234`);
+const port = 9002;
+
+const socket = io.connect(`http://localhost:${port}`);
 
 function joinSession() {
     if(alias.value === '') {
