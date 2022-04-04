@@ -10,7 +10,7 @@ const message = document.getElementById("message");
 
 chatContainer.style.height = window.innerHeight + 'px';
 
-const socket = io.connect(`https://cyb3rchat.herokuapp.com:${port}`);
+const socket = io.connect(`https://0.0.0.0:${port}`);
 
 function joinSession() {
     if(alias.value === '') {
