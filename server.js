@@ -2,7 +2,8 @@ const express = require('express');
 const chat = express();
 const http = require("http");
 const server = http.createServer(chat);
-const io = require('socket.io')(server)
+const io = require('socket.io')(server);
+const port = require('./myModule');
 
 const users = [];
 let color;
@@ -39,10 +40,6 @@ chat.get('/cv', (req, res) => {
     });
 });
 
-const port = process.env.PORT || 9002;
-
-server.listen(port, () => {
-    console.log(`Listening on https://0.0.0.0:${port}`);
+server.listen(port.port, () => {
+    console.log(`Listening on http://0.0.0.0:${port}`);
 });
-
-module.exports = ports;

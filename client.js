@@ -1,4 +1,4 @@
-const port = require('server');
+const port = require('./myModule');
 const io = require('socket.io-client');
 const chatContainer = document.getElementById("chat-container");
 const alias = document.getElementById("alias");
@@ -10,7 +10,9 @@ const message = document.getElementById("message");
 
 chatContainer.style.height = window.innerHeight + 'px';
 
-const socket = io.connect(`https://0.0.0.0:${port}`);
+console.log('dddd');
+
+const socket = io.connect('http://0.0.0.0:'+port);
 
 function joinSession() {
     if(alias.value === '') {
