@@ -75,7 +75,8 @@
 }
 
 .user {
-	float: right;
+	padding: 10px;
+	background: green;
 }
 
 #chat {
@@ -93,6 +94,7 @@
     font-size: 120%;
     overflow: auto;
     color: white;
+	padding: 20px;
 }
 
 #send-container {

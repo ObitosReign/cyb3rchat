@@ -23,7 +23,7 @@ io.on('connection', (socket) => {
             for(let i=0; i<users.length; i++){  
                 if(users[i].alias === data[1]){
                     color = users[i].color;
-                    io.emit('send', `<div class="user"><span style="color:${color}">${data[1]}:</span> ${data[0]}</div>`);
+                    io.emit('send', `<div class="user">${data[0]}</div>`);
                     break;
                 }
             }
