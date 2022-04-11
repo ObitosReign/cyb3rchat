@@ -33,9 +33,8 @@ io.on('connection', (socket) => {
 
 chat.use(express.static(__dirname + '/'));
 
-
 const port = process.env.PORT || 80;
 
 server.listen(port, () => {
-    console.log(Listening on http://0.0.0.0:${port}`);
+    console.log(`Listening on http://0.0.0.0:${port}`);
 });
