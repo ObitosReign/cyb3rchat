@@ -5,22 +5,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ConXioN</title>
     <script defer src="bundle.js"></script>
     <script defer src="client.js"></script>
 </head>
 <body>
     
-    <div id="chat-container">
-      
-        <div id="chat-wrap">
-
-            <h1 id='title'>Virtualarity Chat</h1>
-
+    <div id="chat-container">      
+        <div id="chat-window">
+            <div id='header'>ConXioN</div>
             <div id="login">
-                <label id="label" for="alias">Choose an Alias</label>
+                <label id="label" for="alias">Enter an Alias</label>
                 <br/>
-                <input id="alias" type='text' placeholder="User Alias" onkeydown='checkKey(event)' />
+                <input id="input-alias" type='text' placeholder="User Alias" onkeydown='checkKey(event)' />
                 <br>
                 <button id="enter" onclick="joinSession()">Enter</button>
             </div>
@@ -32,7 +29,6 @@
                     <button id="send" onclick='messaging()'>Send</button>
                 </div>
             </div>
-
         </div>
     </div>
 </body>
