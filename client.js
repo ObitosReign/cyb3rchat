@@ -8,8 +8,7 @@ const screen = document.getElementById("screen");
 const message = document.getElementById("message");
 
 chatContainer.style.height = window.innerHeight + 'px';
-const port = process.env.PORT || 80;
-const socket = io.connect('0.0.0.0'+ port);
+const socket = io.connect('0.0.0.0');
 
 function joinSession() {
     if(alias.value === '') {
