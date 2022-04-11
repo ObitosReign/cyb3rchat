@@ -9,7 +9,7 @@ const message = document.getElementById("message");
 
 chatContainer.style.height = window.innerHeight + 'px';
 
-const socket = io.connect('https://cyb3rchat.herokuapp.com');
+const socket = io.connect('https://conxtion.cyb3rsp4ce.online');
 
 function joinSession() {
     if(alias.value === '') {
