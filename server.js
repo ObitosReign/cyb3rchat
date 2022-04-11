@@ -16,8 +16,8 @@ io.on('connection', (socket) => {
     socket.on('join', (alias) => {
         console.log(`${alias} entered the chat!`);
 		users.push({alias: alias, color: color});
-        io.emit('join', `<div class="user"style="background:${color}">${alias} has joined!`);
-        socket.emit(`join`, `<div class="user"style="background:${color}">Welcome ${alias}`);
+        io.emit('join', `<div class="user" style="background:${color}">${alias} has joined!</div>`);
+        socket.emit(`join`, `<div class="user"style="background:${color}">Welcome ${alias}</div>`);
         socket.on('send', (message) => {
             data = message.split('*@&#%@&#/.,');
             for(let i=0; i<users.length; i++){  
