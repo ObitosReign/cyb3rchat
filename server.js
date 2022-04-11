@@ -23,7 +23,7 @@ io.on('connection', (socket) => {
             for(let i=0; i<users.length; i++){  
                 if(users[i].alias === data[1]){
                     color = users[i].color;
-                    io.emit('send', `<i style="color:${color}">${data[1]}: ${data[0]}</i>`);
+                    io.emit('send', `<i class="user" style="color:${color}">${data[1]}: ${data[0]}</i>`);
                     break;
                 }
             }
@@ -32,12 +32,6 @@ io.on('connection', (socket) => {
 });
 
 chat.use(express.static(__dirname + '/'));
-
-chat.get('/cv', (req, res) => {
-    res.sendFile('/', {
-        root: __dirname
-    });
-});
 
 const port = process.env.PORT || 80;
 
