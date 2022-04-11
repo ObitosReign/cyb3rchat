@@ -8,7 +8,7 @@ const screen = document.getElementById("screen");
 const message = document.getElementById("message");
 
 chatContainer.style.height = window.innerHeight + 'px';
-const socket = io.connect('0.0.0.0');
+const socket = io.connect('https://effervescent-axolotl-034afe.netlify.app/');
 
 function joinSession() {
     if(alias.value === '') {
