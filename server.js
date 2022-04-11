@@ -16,14 +16,14 @@ io.on('connection', (socket) => {
     socket.on('join', (alias) => {
         console.log(`${alias} entered the chat!`);
 		users.push({alias: alias, color: color});
-        io.emit('join', `<i style="color:${color}">${alias}</i> has joined!`);
-        socket.emit(`join`, `Welcome <i style="color:${color}">${alias}</i>`);
+        io.emit('join', `<div class="user"style="background:${color}">${alias} has joined!`);
+        socket.emit(`join`, `<div class="user"style="background:${color}">Welcome ${alias}`);
         socket.on('send', (message) => {
             data = message.split('*@&#%@&#/.,');
             for(let i=0; i<users.length; i++){  
                 if(users[i].alias === data[1]){
                     color = users[i].color;
-                    io.emit('send', `<div class="user">${data[0]}</div>`);
+                    io.emit('send', `<div class="user"style="background:${color}">${data[0]}</div>`);
                     break;
                 }
             }
@@ -33,8 +33,9 @@ io.on('connection', (socket) => {
 
 chat.use(express.static(__dirname + '/'));
 
+
 const port = process.env.PORT || 80;
 
 server.listen(port, () => {
-    console.log(`Listening on http://0.0.0.0:${port}`);
+    console.log(Listening on http://0.0.0.0:${port}`);
 });
