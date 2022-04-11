@@ -8,6 +8,7 @@ const screen = document.getElementById("screen");
 const message = document.getElementById("message");
 
 chatContainer.style.height = window.innerHeight + 'px';
+
 const socket = io.connect('https://conxion.herokuapp.com/');
 
 function joinSession() {

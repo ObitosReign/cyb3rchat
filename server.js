@@ -39,7 +39,7 @@ chat.get('/cv', (req, res) => {
     });
 });
 
-const port = 80;
+const port = process.env.PORT || 80;
 
 server.listen(port, () => {
     console.log(`Listening on http://0.0.0.0:${port}`);
