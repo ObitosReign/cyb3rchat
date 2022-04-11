@@ -11,16 +11,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 10px 10px 5px gray;
     flex-direction: column;
 	background-color: black;
-}
-
-#chat-window {
-    width: 100%;
-    height: 100%;
-    opacity: 0.7;
-    transition: opacity 0.3s;
 }
 
 #header {
@@ -35,7 +27,7 @@
 
 #login {
     width: 100%;
-    height: calc(100% - 50px);
+    height: 100%;
     background-color: hsl(220, 100%, 15%);
     color: white;
     display: flex;
@@ -56,7 +48,6 @@
     border-radius: 5px;
     transition: width 0.5s, height 0.5s;
     font-size: 130%;
-	margin: 10px;
 }
 
 #alias:hover {
@@ -75,7 +66,6 @@
     width: 90px;
     height: 40px;
     transition: letter-spacing 0.3s;
-    margin: 10px;
 }
 
 #enter:hover{
@@ -90,16 +80,16 @@
 
 #chat {
     width: 100%;
-	height: calc(100% - 50px);
+	height: 100%;
     border-radius: 0 0 10px 10px;
     display: none;
+	background: red;
 }
 
 #screen {
     width: 100%;
-	height: 80%;
+	height: calc(100% - 60px);
     background:linear-gradient(to left,hsl(220, 100%, 15%),hsl(220, 100%, 5%));
-    padding: 10px;
     font-size: 120%;
     overflow: auto;
     color: white;
@@ -107,14 +97,13 @@
 
 #send-container {
     width: 100%;
-    height: 20%;
+    height: 60px;
     border-radius: 0 0 10px 10px;
     display: flex;
 }
 
 #message {
     padding: 20px;
-    height: 20%;
     width: 81%;
     font-size: 140%;
     color: black;
@@ -123,7 +112,6 @@
 #send {
     width: 20%;
     padding: 20px;
-    height: 10%;
     line-height: 5px;
     background-color: hsl(220, 100%, 5%);
     color: white;

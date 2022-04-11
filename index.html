@@ -12,24 +12,23 @@
 <body>
     
     <div id="chat-container">      
-        <div id="chat-window">
-            <div id='header'>ConXioN</div>
-            <div id="login">
-                <label id="label" for="alias">Enter an Alias</label>
-                <br/>
-                <input id="input-alias" type='text' placeholder="User Alias" onkeydown='checkKey(event)' />
-                <br>
-                <button id="enter" onclick="joinSession()">Enter</button>
-            </div>
+         <div id='header'>ConXioN</div>
+		 
+         <div id="login">
+             <label id="label" for="alias">Enter an Alias</label>
+             <br/>
+             <input id="input-alias" type='text' placeholder="User Alias" onkeydown='checkKey(event)' />
+             <br>
+             <button id="enter" onclick="joinSession()">Enter</button>
+         </div>
 
-            <div id="chat">
-                <div id="screen"></div>
-                <div id="send-container">
-                    <input id="message" type='text' onkeydown='checkKey(event)'/>
-                    <button id="send" onclick='messaging()'>Send</button>
-                </div>
-            </div>
-        </div>
+         <div id="chat">
+             <div id="screen"></div>
+             <div id="send-container">
+                 <input id="message" type='text' onkeydown='checkKey(event)'/>
+                 <button id="send" onclick='messaging()'>Send</button>
+             </div>
+         </div>
     </div>
 </body>
 </html>

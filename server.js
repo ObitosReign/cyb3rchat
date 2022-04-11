@@ -23,7 +23,7 @@ io.on('connection', (socket) => {
             for(let i=0; i<users.length; i++){  
                 if(users[i].alias === data[1]){
                     color = users[i].color;
-                    io.emit('send', `<i class="user" style="color:${color}">${data[1]}:</i> ${data[0]}`);
+                    io.emit('send', `<div class="user"><span style="color:${color}">${data[1]}:</span> ${data[0]}</div>`);
                     break;
                 }
             }
@@ -37,5 +37,5 @@ chat.use(express.static(__dirname + '/'));
 const port = process.env.PORT || 80;
 
 server.listen(port, () => {
-    console.log(`Listening on http://0.0.0.0:${port}`);
+    console.log(Listening on http://0.0.0.0:${port}`);
 });

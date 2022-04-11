@@ -33,8 +33,10 @@ function checkKey(event) {
 }
 
 function messaging() {
-    socket.emit('send', message.value+"*@&#%@&#/.,"+alias.value);
-    message.value = '';
+	if(message.value != '') {
+		socket.emit('send', message.value+"*@&#%@&#/.,"+alias.value);
+		message.value = '';	
+	}
 }
 
 socket.on('send', (message) => {
